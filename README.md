@@ -10,15 +10,13 @@ In this documentent, you will learn about the steps needed to deploy and run Pre
 
 In this tutorial, you will work with two different repositories: `composables-xchain-mint` contains the source code of Presto, docs, and many utility scripts. `presto-deployment-example` tries to abstract the complexity by focusing only on the necessary to deploy a simple version of Presto. However, you will still need to compile the contracts from the original source code using Foundry.
 
-### Presto Architecture
+## Presto Architecture
 
 For a complete overview of Presto's architecture, please [check out this Medium article](). It is important to get familiar with the flow and the contracts involved before you start deploying.
 
 ## Deployment
 
 **IMPORTANT:** In this tutorial, you will deploy a bidirectional minting flow (`source -> destination` and `destination -> source`). However, you may only deploy one path.
-
-### Overview
 
 There are several pieces involved in the deployment of Presto:
 
