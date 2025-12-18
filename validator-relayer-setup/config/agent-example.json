@@ -1,0 +1,75 @@
+{
+  "chains": {
+    "source": {
+      "name": "source",
+      "chainId": 412346,
+      "customRpcUrls": "http://host.docker.internal:8547",
+      "rpcUrls": [
+          {"http":"http://host.docker.internal:8547"}
+      ],
+      "staticMerkleRootMultisigIsmFactory": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "staticMessageIdMultisigIsmFactory": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "staticAggregationIsmFactory": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "staticAggregationHookFactory": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "domainRoutingIsmFactory": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "staticMerkleRootWeightedMultisigIsmFactory": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "staticMessageIdWeightedMultisigIsmFactory": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "proxyAdmin": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      "mailbox": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      "interchainAccountRouter": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+      "validatorAnnounce": "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      "testRecipient": "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      "merkleTreeHook": "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
+      "interchainGasPaymaster": "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
+      "protocol": "ethereum",
+      "signer": {
+          "type": "hexKey",
+          "key": "$VALIDATOR_KEY"
+      }
+    },
+    "destination": {
+      "name": "destination",
+      "chainId": 31338,
+      "customRpcUrls": "http://host.docker.internal:8549",
+      "rpcUrls": [
+          {"http":"http://host.docker.internal:8549"}
+      ],
+      "staticMerkleRootMultisigIsmFactory": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "staticMessageIdMultisigIsmFactory": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "staticAggregationIsmFactory": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "staticAggregationHookFactory": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "domainRoutingIsmFactory": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "staticMerkleRootWeightedMultisigIsmFactory": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "staticMessageIdWeightedMultisigIsmFactory": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "proxyAdmin": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      "mailbox": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      "interchainAccountRouter": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+      "validatorAnnounce": "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      "testRecipient": "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      "merkleTreeHook": "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
+      "interchainGasPaymaster": "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
+      "protocol": "ethereum",
+      "signer": {
+        "type": "hexKey",
+        "key": "$VALIDATOR_KEY"
+      }
+    }
+  },
+  "checkpointSyncer": {
+    "type": "localStorage",
+    "path": "/tmp/hyperlane-validator-signatures-source"
+  },
+  "originChainName": "source",
+  "relaychains": "source,destination",
+  "db": "/mnt/hyperlane_db",
+  "allowlocalcheckpointsyncers": true,
+  "defaultSigner": {
+    "type": "hexKey",
+    "key": "$VALIDATOR_KEY"
+  },
+  "validator": {
+    "type": "hexKey",
+    "key": "$VALIDATOR_KEY"
+  },
+  "reorgPeriod": 21
+}

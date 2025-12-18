@@ -1,0 +1,33 @@
+owner: "<YOUR_OWNER_ADDRESS>"
+defaultIsm:
+  type: trustedRelayerIsm
+  relayer: "<YOUR_OWNER_ADDRESS>"
+defaultHook:
+  type: aggregationHook
+  hooks:
+    - owner: "<YOUR_OWNER_ADDRESS>"
+      type: interchainGasPaymaster
+      beneficiary: "<YOUR_OWNER_ADDRESS>"
+      oracleKey: "<YOUR_OWNER_ADDRESS>"
+      overhead:
+        destination: 75000
+      oracleConfig:
+        destination:
+            gasPrice: "1058512358"
+            tokenDecimals: 18
+            tokenExchangeRate: "11000000000"
+    - type: merkleTreeHook
+requiredHook:
+  owner: "<YOUR_OWNER_ADDRESS>"
+  type: interchainGasPaymaster
+  beneficiary: "<YOUR_OWNER_ADDRESS>"
+  oracleKey: "<YOUR_OWNER_ADDRESS>"
+  overhead:
+    destination: 75000
+  oracleConfig:
+    destination:
+      gasPrice: "1058512358"
+      tokenExchangeRate: "11000000000"
+      tokenDecimals: 18
+proxyAdmin:
+  owner: "<YOUR_OWNER_ADDRESS>"

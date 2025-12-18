@@ -1,0 +1,26 @@
+destination:
+  interchainSecurityModule:
+    type: trustedRelayerIsm
+    relayer: "$VALIDATOR_ADDRESS"
+  isNft: false
+  owner: "$DEPLOYER_ADDRESS"
+  proxyAdmin:
+    address: "$PROXY_ADMIN_ADDRESS"
+    owner: "$DEPLOYER_ADDRESS"
+  type: synthetic
+  symbol: ECWETH
+  name: Espresso Composables WETH
+  decimals: 18
+source:
+  interchainSecurityModule:
+    type: trustedRelayerIsm
+    relayer: "$VALIDATOR_ADDRESS"
+  isNft: false
+  owner: "$DEPLOYER_ADDRESS"
+  proxyAdmin:
+    address: "$PROXY_ADMIN_ADDRESS"
+    owner: "$DEPLOYER_ADDRESS"
+  type: native
+  symbol: ECWETH
+  name: Espresso Composables WETH
+  decimals: 18

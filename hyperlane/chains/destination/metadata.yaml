@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../schema.json
+chainId: 3313939
+displayName: Destination
+domainId: 3313939
+index:
+  from: 71
+isTestnet: true
+name: destination
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://apechain-tnet.rpc.caldera.xyz/http
+technicalStack: arbitrumnitro

@@ -1,0 +1,44 @@
+x-common-attributes: &common
+  image: gcr.io/abacus-labs-dev/hyperlane-agent:agents-v1.4.0
+  environment:
+    CONFIG_FILES: /config.json
+    # RUST_LOG: debug
+  restart: unless-stopped
+  security_opt:
+    - seccomp:unconfined
+  network_mode: "host"
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+
+services:
+  source-validator:
+    container_name: source-validator
+    <<: *common
+
+    command: ./validator --metricsPort="9090"
+    volumes:
+      - ./config/agent.json:/config.json
+      - ./${SERVICE_NAME}/hyperlane_db:/mnt/hyperlane_db
+      - ./checkpoints:/tmp/hyperlane-validator-signatures-source
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "bash -c '</dev/tcp/localhost/9090'" ]
+      interval: 30s
+      timeout: 3s
+      retries: 10
+      start_period: 60s
+
+  relayer:
+    container_name: relayer
+    <<: *common
+
+    command: ./relayer --metricsPort="9091"
+    volumes:
+      - ./config/agent.json:/config.json
+      - ./relayer/hyperlane_db:/mnt/hyperlane_db
+      - ./checkpoints:/tmp/hyperlane-validator-signatures-source
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "bash -c '</dev/tcp/localhost/9091'" ]
+      interval: 30s
+      timeout: 3s
+      retries: 10
+      start_period: 60s
